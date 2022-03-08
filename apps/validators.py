@@ -1,8 +1,9 @@
 # re module provides support for regular expressions
+import datetime
 import re
 # importing "keyword" for keyword operations
 import keyword
-
+from datetime import date
 
 def check_valid_identifier(identifier):
 	"""
@@ -139,6 +140,26 @@ def check_age_for_work(age):
 		print(result)
 
 	return result
+
+def election(birthdate: str, date_election: str, status: int):
+    birthdate = birthdate.split('-')
+    date_election = date_election.split('-')
+
+    birth = date(int(birthdate[0]), int(birthdate[1]), int(birthdate[2]))
+    elec = date(int(date_election[0]), int(date_election[1]), int(date_election[2]))
+
+    age = ((elec - birth) / 365).days
+    print(age)
+
+    if age < 16:
+        return 'Idade insuficiente'
+    elif 16 <= age <= 17 or age > 70 or status == 0:
+        return 'Facultativo'
+    else:
+        return 'Obrigatório'
+		
+
+
 
 
 
