@@ -1,6 +1,6 @@
 # Projeto com exemplos de Teste variados
 
-## Aplicações no pacote `apps`
+## Aplicações no pacote `apps` para teste unitário
 
 ## Testes no pacote `test_apps`
 
@@ -31,3 +31,52 @@
 
 #### Gerar report HTML
 `coverage html`
+
+
+## Aplicações no pacote educacional para teste de integração
+
+### Instale o Django e o Django REST Framework:
+
+pip install django djangorestframework
+
+### Criado o projeto educacional:
+
+django-admin startproject educacional
+
+### Criado o projeto educacional:
+
+- Acessar a pasta do projeto e criar o app:
+
+python manage.py startapp secretaria
+
+### Incluído o app no settings do projeto e o rest_framework
+
+    'rest_framework',  
+    'secretaria',           
+
+### Migrar as tabelas padrões do Django
+
+python manage.py migrate
+
+### Criado models.py e serializers.py para a entidade Aluno
+
+### Criado a migração para a entidade aluno
+
+python manage.py makemigrations
+python manage.py migrate
+
+![img.png](img.png)
+
+### Criar testes 
+
+pip install pytest
+
+### Instalar ferramenta teste funcional automatizado
+
+pip install pytest-playwright
+playwright install chromium
+
+## Aplicações no pacote educacional para teste de sistema
+
+### Abrir o gerador de cógido do Playwright
+playwright codegen 127.0.0.1:8000/admin

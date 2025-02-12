@@ -3,3 +3,4 @@
 /.coverage
 /.idea/
 /htmlcov/
+/educacional/.pytest_cache/
